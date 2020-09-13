@@ -1,5 +1,6 @@
 package com.itheima.mybatis.cfg;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Configuration {
@@ -8,14 +9,16 @@ public class Configuration {
     private String Username;
     private String Password;
 
-    private Map<String,Mapper> mappers;
+    private Map<String,Mapper> mappers=new HashMap<String,Mapper>();
 
     public Map<String, Mapper> getMappers() {
         return mappers;
     }
 
     public void setMappers(Map<String, Mapper> mappers) {
+
         this.mappers.putAll(mappers);
+
     }
 
     public void setDriver(String driver) {

@@ -19,8 +19,8 @@ public class DefaultSqlSession implements SqlSession{
 
     //用于创建代理对象
     public <T> T getMapper(Class<T> daoInterfaceClass) {
-        Proxy.newProxyInstance(daoInterfaceClass.getClassLoader(),new Class[]{daoInterfaceClass},new MapperProxy(cfg.getMappers(),connection));
-        return null;
+        return (T) Proxy.newProxyInstance(daoInterfaceClass.getClassLoader(),new Class[]{daoInterfaceClass},new MapperProxy(cfg.getMappers(),connection));
+
     }
     //用于释放资源
     public void close() {

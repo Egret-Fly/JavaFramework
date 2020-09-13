@@ -33,8 +33,8 @@ public class XMLConfigBuilder {
      * 使用的技术：
      *      dom4j+xpath
      */
-    public static Configuration loadConfiguration(InputStream config){
-        try{
+    public static Configuration loadConfiguration(InputStream config) {
+        try {
             //定义封装连接信息的配置对象（mybatis的配置对象）
             Configuration cfg = new Configuration();
 
@@ -47,29 +47,29 @@ public class XMLConfigBuilder {
             //4.使用xpath中选择指定节点的方式，获取所有property节点
             List<Element> propertyElements = root.selectNodes("//property");
             //5.遍历节点
-            for(Element propertyElement : propertyElements){
+            for (Element propertyElement : propertyElements) {
                 //判断节点是连接数据库的哪部分信息
                 //取出name属性的值
                 String name = propertyElement.attributeValue("name");
-                if("driver".equals(name)){
+                if ("driver".equals(name)) {
                     //表示驱动
                     //获取property标签value属性的值
                     String driver = propertyElement.attributeValue("value");
                     cfg.setDriver(driver);
                 }
-                if("url".equals(name)){
+                if ("url".equals(name)) {
                     //表示连接字符串
                     //获取property标签value属性的值
                     String url = propertyElement.attributeValue("value");
                     cfg.setUrl(url);
                 }
-                if("username".equals(name)){
+                if ("username".equals(name)) {
                     //表示用户名
                     //获取property标签value属性的值
                     String username = propertyElement.attributeValue("value");
                     cfg.setUsername(username);
                 }
-                if("password".equals(name)){
+                if ("password".equals(name)) {
                     //表示密码
                     //获取property标签value属性的值
                     String password = propertyElement.attributeValue("value");
@@ -79,19 +79,21 @@ public class XMLConfigBuilder {
             //取出mappers中的所有mapper标签，判断他们使用了resource还是class属性
             List<Element> mapperElements = root.selectNodes("//mappers/mapper");
             //遍历集合
-            for(Element mapperElement : mapperElements){
+            for (Element mapperElement : mapperElements) {
                 //判断mapperElement使用的是哪个属性
                 Attribute attribute = mapperElement.attribute("resource");
-                if(attribute != null){
+                if (attribute != null) {
                     System.out.println("使用的是XML");
                     //表示有resource属性，用的是XML
                     //取出属性的值
                     String mapperPath = attribute.getValue();//获取属性的值"com/itheima/dao/UserDao.xml"
+                    //System.out.println(mapperPath);
                     //把映射配置文件的内容获取出来，封装成一个map
                     Map<String, Mapper> mappers = loadMapperConfiguration(mapperPath);
+
                     //给configuration中的mappers赋值
                     cfg.setMappers(mappers);
-                }else{
+                } else {
                    /* System.out.println("使用的是注解");
                     //表示没有resource属性，用的是注解
                     //获取class属性的值
@@ -104,12 +106,12 @@ public class XMLConfigBuilder {
             }
             //返回Configuration
             return cfg;
-        }catch(Exception e){
+        } catch (Exception e) {
             throw new RuntimeException(e);
-        }finally{
+        } finally {
             try {
                 config.close();
-            }catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

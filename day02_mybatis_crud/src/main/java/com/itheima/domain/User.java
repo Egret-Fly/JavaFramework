@@ -1,3 +1,5 @@
+package com.itheima.domain;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -15,7 +17,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "com.itheima.domain.User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", address='" + address + '\'' +

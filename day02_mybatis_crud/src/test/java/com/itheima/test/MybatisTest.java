@@ -65,14 +65,83 @@ public class MybatisTest {
     @Test
     public  void testSave() throws IOException {
         User user = new User();
-        user.setUsername("mybatis saveuser");
+        user.setUsername("mybatis last saveuser");
         user.setAddress("西安市长安区");
         user.setSex("男");
         user.setBirthday(new Date());
+        System.out.println("保存之前"+user);
         //1保存
         userdao.saveUser(user);
+        System.out.println("保存之后："+user);
 
 
 
+    }
+
+
+    /**
+     * 更新操作
+     * @throws IOException
+     */
+    @Test
+    public  void testUpdate() throws IOException {
+        User user = new User();
+        user.setId(49);
+        user.setUsername("mybatis updateuser2");
+        user.setAddress("西安市碑林区");
+        user.setSex("男");
+        user.setBirthday(new Date());
+        //1保存
+        userdao.updateUser(user);
+
+
+
+    }
+
+    /**
+     * 删除
+     * @throws IOException
+     */
+    @Test
+    public  void testDelete() throws IOException {
+
+        userdao.deleteUser(49);
+
+
+    }
+
+
+    /**
+     * 测试查询所有
+     */
+    @Test
+    public void testFindById() throws IOException {
+        User users = userdao.findById(48);
+
+            System.out.println(users);
+    }
+
+    /**
+     * 模糊查询
+     */
+    @Test
+    public void testFindByName() throws IOException {
+        String name = "王";
+        List<User> users = userdao.findByName("%"+name+"%");
+
+        for (User user : users) {
+            System.out.println(user);
+        }
+
+    }
+
+    /**
+     * 测试查询所有记录条数
+     */
+    @Test
+    public void testFindTotal() throws IOException {
+        int count = userdao.findTotal();
+
+        System.out.println(count);
     }
 }

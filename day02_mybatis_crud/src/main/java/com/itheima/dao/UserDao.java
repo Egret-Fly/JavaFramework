@@ -19,4 +19,29 @@ public interface UserDao {
      * @param user
      */
     void saveUser(User user);
+
+    /**
+     * 更新用户
+     */
+    void updateUser(User user);
+
+    /**
+     * 根据id删除用户
+     * @param userId
+     */
+    void deleteUser(Integer userId);
+
+    /**
+     * 根据id查询用户信息
+     */
+    User findById(Integer userId);
+    /**
+     * 根据名称模糊查询
+     */
+    List<User> findByName(String username);
+
+    /**
+     * 查询总用户数
+     */
+    int findTotal();
 }

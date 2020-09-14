@@ -1,5 +1,6 @@
 package com.itheima.dao;
 
+import com.itheima.domain.QueryVo;
 import com.itheima.domain.User;
 
 import java.util.List;
@@ -44,4 +45,11 @@ public interface UserDao {
      * 查询总用户数
      */
     int findTotal();
+
+    /**
+     * 根据queryVo中的条件查询用户
+     * @param vo
+     * @return
+     */
+    List<User> findUserByVo(QueryVo vo);
 }

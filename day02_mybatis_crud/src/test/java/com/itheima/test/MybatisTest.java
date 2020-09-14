@@ -1,6 +1,7 @@
 package com.itheima.test;
 
 import com.itheima.dao.UserDao;
+import com.itheima.domain.QueryVo;
 import com.itheima.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -143,5 +144,23 @@ public class MybatisTest {
         int count = userdao.findTotal();
 
         System.out.println(count);
+    }
+
+    /**
+     * 模糊查询
+     */
+    @Test
+    public void testFindByVo() throws IOException {
+        String name = "%王%";
+        QueryVo vo = new QueryVo();
+        User user = new User();
+        user.setUsername(name);
+        vo.setUser(user);
+        List<User> users = userdao.findUserByVo(vo);
+
+        for (User u : users) {
+            System.out.println(u);
+        }
+
     }
 }

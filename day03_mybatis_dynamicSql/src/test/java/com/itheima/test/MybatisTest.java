@@ -2,6 +2,7 @@ package com.itheima.test;
 
 import com.itheima.dao.UserDao;
 
+import com.itheima.domain.QueryVo;
 import com.itheima.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -14,6 +15,7 @@ import org.junit.Test;
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -117,6 +119,27 @@ public class MybatisTest {
         User u = new User();
         u.setUsername("老王");
         List<User> users = userdao.findUserByCondititon(u);
+
+        for (User user : users) {
+            System.out.println(user);
+        }
+
+    }
+
+    /**
+     * 测试查询foreach所有
+     */
+    @Test
+    public void testFindIds() throws IOException {
+        QueryVo qv = new QueryVo();
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(41);
+        list.add(42);
+        list.add(46);
+        qv.setIds(list);
+
+
+        List<User> users = userdao.findUserInIds(qv);
 
         for (User user : users) {
             System.out.println(user);

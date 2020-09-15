@@ -2,9 +2,7 @@ package com.itheima.test;
 
 import com.itheima.dao.AccountDao;
 import com.itheima.dao.UserDao;
-
 import com.itheima.domain.Account;
-import com.itheima.domain.QueryVo;
 import com.itheima.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -14,22 +12,19 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.annotation.Resource;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
  * 测试mybatis的curd操作
  */
-public class MybatisTest {
+public class UserTest {
 
     private InputStream in;
 
     private SqlSession sqlSession;
-    private AccountDao accountdao;
+    private UserDao userdao;
     @Before
     public void init() throws IOException {
         in = Resources.getResourceAsStream("SqlMapConfig.xml");
@@ -40,7 +35,7 @@ public class MybatisTest {
         //3.获取SqlSession对象
         sqlSession = factory.openSession();
         //获取dao的代理对象
-        accountdao = sqlSession.getMapper(AccountDao.class);
+        userdao = sqlSession.getMapper(UserDao.class);
     }
     @After
     public void destory() throws IOException {
@@ -56,12 +51,12 @@ public class MybatisTest {
      */
     @Test
     public void testFindAll() throws IOException {
-        List<Account> accounts = accountdao.findAll();
+        List<User> users = userdao.findAll();
 
-        for (Account account : accounts) {
-            System.out.println("----------每个account的信息-----------");
-            System.out.println(account);
-            System.out.println(account.getUser());
+        for (User user : users) {
+            System.out.println("----------每个User的信息-----------");
+            System.out.println(user);
+            System.out.println(user.getAccounts());
         }
 
     }

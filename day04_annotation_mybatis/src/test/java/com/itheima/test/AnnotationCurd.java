@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Date;
 
 public class AnnotationCurd {
     private InputStream in;
@@ -42,5 +43,34 @@ public class AnnotationCurd {
 
         userdao.saveUser(user);
 
+    }
+
+
+    @Test
+    public void testUpdate(){
+        User user = new User();
+        user.setId(53);
+        user.setUsername("mybatis annotation");
+        user.setAddress("西安市长安");
+        user.setBirthday(new Date());
+
+        userdao.updateUser(user);
+
+    }
+
+    @Test
+    public void testDelete(){
+
+
+        userdao.deleteUser(50);
+
+    }
+
+    @Test
+    public void testfindONe(){
+
+
+        User user = userdao.findById(52);
+        System.out.println(user);
     }
 }

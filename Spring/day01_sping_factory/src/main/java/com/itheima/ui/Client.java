@@ -10,7 +10,13 @@ import com.itheima.service.impl.AccountServiceImpl;
  */
 public class Client {
     public static void main(String[] args) {
-        AccountService as = (AccountService) BeanFactory.getBean("accountService");
-        as.saveaccount();
+        //AccountService as = (AccountService) BeanFactory.getBean("accountService");
+        for (int i=0;i<5;i++)
+        {
+            AccountService as = (AccountService) BeanFactory.getBean("accountService");
+            System.out.println(as);
+            as.saveaccount();
+        }
+        //as.saveaccount();
     }
 }

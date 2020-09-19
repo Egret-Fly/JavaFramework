@@ -11,7 +11,10 @@ import com.itheima.service.AccountService;
  */
 public class AccountServiceImpl implements AccountService {
     private AccountDao accountDao = (AccountDao) BeanFactory.getBean("accountDao");
+    private int i = 1;
     public void saveaccount() {
         accountDao.saveAccount();
+        System.out.println(i);
+        i++;
     }
 }

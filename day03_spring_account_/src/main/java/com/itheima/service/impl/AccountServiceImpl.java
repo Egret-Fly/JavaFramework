@@ -3,15 +3,23 @@ package com.itheima.service.impl;
 import com.itheima.dao.IAccountDao;
 import com.itheima.domain.Account;
 import com.itheima.service.IAccountService;
+import com.itheima.utils.TransactionManager;
 
 import java.util.List;
 
 /**
  * 账户的业务层实现类
+ *
+ * 事务控制应该都在业务层
  */
 public class AccountServiceImpl implements IAccountService{
 
     private IAccountDao accountDao;
+    private TransactionManager txManger;
+
+    public void setTxManger(TransactionManager txManger) {
+        this.txManger = txManger;
+    }
 
     public void setAccountDao(IAccountDao accountDao) {
         this.accountDao = accountDao;
@@ -19,11 +27,31 @@ public class AccountServiceImpl implements IAccountService{
 
     @Override
     public List<Account> findAllAccount() {
+        try {
+            //1.开启事务
+            //2.执行操作
+            //3.提交事务
+            //4.返回结果
+        }catch (Exception e){
+            //回滚操作
+        }finally {
+            //6.释放连接
+        }
         return accountDao.findAllAccount();
     }
 
     @Override
     public Account findAccountById(Integer accountId) {
+        try {
+            //1.开启事务
+            //2.执行操作
+            //3.提交事务
+            //4.返回结果
+        }catch (Exception e){
+            //回滚操作
+        }finally {
+            //6.释放连接
+        }
         return accountDao.findAccountById(accountId);
     }
 

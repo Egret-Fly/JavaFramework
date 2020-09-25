@@ -143,6 +143,7 @@ public class AccountServiceImpl implements IAccountService{
                 Account target= accountDao.findAccountByName(targetName);
                 //2.3.转出账户减钱
                 source.setMoney(source.getMoney()-money);
+                int i=1/0;
                 //2.4.转入账户加钱
                 target.setMoney(target.getMoney()+money);
                 //2.5.更新转出账户
@@ -156,6 +157,7 @@ public class AccountServiceImpl implements IAccountService{
         }catch (Exception e){
             //回滚操作
             txManger.rollback();
+            e.printStackTrace();
         }finally {
             //6.释放连接
             txManger.release();

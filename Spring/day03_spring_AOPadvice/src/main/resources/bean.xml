@@ -19,19 +19,21 @@
     <aop:config>
 <!--        配置切面-->
         <aop:aspect id="logAdvice" ref="logger">
-<!--           前置通知-->
-            <aop:before method="beforeprintLog" pointcut-ref="pt1"></aop:before>
+<!--&lt;!&ndash;           前置通知&ndash;&gt;-->
+<!--            <aop:before method="beforeprintLog" pointcut-ref="pt1"></aop:before>-->
 
-            <!--           后置通知-->
-            <aop:after-returning method="afterReturningprintLog" pointcut="execution(* com.itheima.Service.impl.*.*(..))"></aop:after-returning>
+<!--            &lt;!&ndash;           后置通知&ndash;&gt;-->
+<!--            <aop:after-returning method="afterReturningprintLog" pointcut="execution(* com.itheima.Service.impl.*.*(..))"></aop:after-returning>-->
 
-            <!--           异常通知-->
-            <aop:after-throwing method="afterThrowingprintLog" pointcut="execution(* com.itheima.Service.impl.*.*(..))"></aop:after-throwing>
+<!--            &lt;!&ndash;           异常通知&ndash;&gt;-->
+<!--            <aop:after-throwing method="afterThrowingprintLog" pointcut="execution(* com.itheima.Service.impl.*.*(..))"></aop:after-throwing>-->
 
 
-            <!--           最终通知-->
-            <aop:after method="afterprintLog" pointcut="execution(* com.itheima.Service.impl.*.*(..))"></aop:after>
+<!--            &lt;!&ndash;           最终通知&ndash;&gt;-->
+<!--            <aop:after method="afterprintLog" pointcut="execution(* com.itheima.Service.impl.*.*(..))"></aop:after>-->
 
+<!--            配置环绕通知-->
+            <aop:around method="arroundPrintLog" pointcut-ref="pt1"></aop:around>
 <!--            配置切入点表达式，id属性用于指定表达式的唯一标准,expression属性用于指定表达式内容-->
             <aop:pointcut id="pt1" expression="execution(* com.itheima.Service.impl.*.*(..))"></aop:pointcut>
         </aop:aspect>

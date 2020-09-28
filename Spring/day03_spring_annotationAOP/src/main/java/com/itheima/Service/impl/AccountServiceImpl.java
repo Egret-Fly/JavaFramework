@@ -1,7 +1,9 @@
 package com.itheima.Service.impl;
 
 import com.itheima.IAccountService;
+import org.springframework.stereotype.Service;
 
+@Service("accountService")
 public class AccountServiceImpl implements IAccountService {
     public void saveAccount() {
         System.out.println("执行了保存");

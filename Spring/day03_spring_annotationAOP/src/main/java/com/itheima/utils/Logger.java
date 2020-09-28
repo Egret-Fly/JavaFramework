@@ -2,32 +2,44 @@ package com.itheima.utils;
 
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
+import org.springframework.stereotype.Component;
 
 /**
  * 用于记录日志的工具类，他提供了公共代码（切入点方法就是业务方法）
  */
+@Component("logger")
+@Aspect//表示当前类是个切面类
 public class Logger {
+    @Pointcut("execution(* com.itheima.Service.impl.*.*(..))")
+    private void pt1(){
+    }
+
     /**
      * 前置通知
      */
+    @Before("pt1()")
     public  void beforeprintLog(){
         System.out.println("前置通知Logger类中的printlog方法开始记录日志了");
     }
     /**
      * 后置通知
      */
+    @AfterReturning("pt1()")
     public  void afterReturningprintLog(){
         System.out.println("后置通知Logger类中的printlog方法开始记录日志了");
     }
     /**
      * 异常通知
      */
+    @AfterThrowing("pt1()")
     public  void afterThrowingprintLog(){
         System.out.println("异常通知Logger类中的printlog方法开始记录日志了");
     }
     /**
      * 最终通知
      */
+    @After("pt1()")
     public  void afterprintLog(){
         System.out.println("最终通知Logger类中的printlog方法开始记录日志了");
     }
@@ -45,6 +57,7 @@ public class Logger {
      * spring中的环绕通知：
      *  它是spring框架为我们提供的一种可以在代码中手动控制增强方法何时执行的方式。
      */
+    //@Around("pt1()")
     public  Object arroundPrintLog(ProceedingJoinPoint pjp){
         Object rtValue = null;
         try{

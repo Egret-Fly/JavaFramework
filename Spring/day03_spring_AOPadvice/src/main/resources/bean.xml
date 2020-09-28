@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<!--        配置spring的ioc，把service 对象配置进来-->
+    <bean id="accountService" class="com.itheima.Service.impl.AccountServiceImpl"></bean>
+
+
+<!--    配置Logger类-->
+    <bean id="logger" class="com.itheima.utils.Logger"></bean>
+
+
+<!--    配置AOP-->
+    <aop:config>
+<!--        配置切面-->
+        <aop:aspect id="logAdvice" ref="logger">
+<!--           前置通知-->
+            <aop:before method="beforeprintLog" pointcut-ref="pt1"></aop:before>
+
+            <!--           后置通知-->
+            <aop:after-returning method="afterReturningprintLog" pointcut="execution(* com.itheima.Service.impl.*.*(..))"></aop:after-returning>
+
+            <!--           异常通知-->
+            <aop:after-throwing method="afterThrowingprintLog" pointcut="execution(* com.itheima.Service.impl.*.*(..))"></aop:after-throwing>
+
+
+            <!--           最终通知-->
+            <aop:after method="afterprintLog" pointcut="execution(* com.itheima.Service.impl.*.*(..))"></aop:after>
+
+<!--            配置切入点表达式，id属性用于指定表达式的唯一标准,expression属性用于指定表达式内容-->
+            <aop:pointcut id="pt1" expression="execution(* com.itheima.Service.impl.*.*(..))"></aop:pointcut>
+        </aop:aspect>
+    </aop:config>
+</beans>

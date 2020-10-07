@@ -1,4 +1,4 @@
-package cn.itcast.controller;
+package cn.cn.itcast.controller.itcast.controller;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;

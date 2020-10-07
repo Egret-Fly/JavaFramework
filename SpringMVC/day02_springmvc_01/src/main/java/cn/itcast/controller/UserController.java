@@ -1,6 +1,6 @@
-package cn.itcast.controller;
+package cn.cn.itcast.controller.itcast.controller;
 
-import cn.itcast.domain.User;
+import cn.cn.itcast.controller.itcast.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;

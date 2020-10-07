@@ -7,8 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="day02_springmvc_01_response" />
-        <module name="day02_springmvc_fileupload" />
         <module name="fileupload" />
+        <module name="day02_springmvc_exception" />
+        <module name="day02_springmvc_fileupload" />
+        <module name="day02_springmvc_interceptor" />
       </profile>
     </annotationProcessing>
   </component>

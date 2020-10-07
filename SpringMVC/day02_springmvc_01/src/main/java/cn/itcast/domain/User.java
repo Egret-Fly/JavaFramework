@@ -1,4 +1,4 @@
-package cn.itcast.domain;
+package cn.cn.itcast.controller.itcast.domain;
 
 import java.io.Serializable;
 

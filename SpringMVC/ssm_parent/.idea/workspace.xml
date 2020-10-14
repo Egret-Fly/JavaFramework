@@ -7,86 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b9a4159-1763-4c58-8be8-c4180b13dba3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../day01_springmvc_start.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven/maven.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_dao/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_dao/src/java/cn/itcast/dao/Itemsdao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_dao/src/java/cn/itcast/domain/Items2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_dao/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_dao/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_dao/src/resources/jdbcConfig.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_dao/src/resources/spring/ApplicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_dao/target/classes/cn/itcast/dao/Itemsdao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_dao/target/classes/cn/itcast/domain/Items2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_dao/target/classes/jdbcConfig.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_dao/target/classes/spring/ApplicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_parent.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_service/src/main/java/cn/itcast/Service/Impl/ItemsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_service/src/main/java/cn/itcast/Service/ItemsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_service/src/main/resources/spring/ApplicationContext-service.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_service/ssm_service.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_service/target/classes/cn/itcast/Service/Impl/ItemsServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_service/target/classes/cn/itcast/Service/ItemsService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_service/target/classes/spring/ApplicationContext-service.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/src/main/java/cn/itcast/controller/ItemsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/src/main/resources/ApplicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/src/main/resources/springmvc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/WEB-INF/pages/viewresult.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/ssm_web.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/classes/ApplicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/classes/cn/itcast/controller/ItemsController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/classes/springmvc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/classes/ApplicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/classes/cn/itcast/controller/ItemsController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/classes/springmvc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/aspectjweaver-1.6.8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/c3p0-0.9.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/druid-1.0.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/jsqlparser-1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/log4j-1.2.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/mybatis-3.4.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/mybatis-spring-1.3.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-5.1.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/pagehelper-5.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/slf4j-api-1.6.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/slf4j-log4j12-1.6.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-aop-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-beans-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-context-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-context-support-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-core-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-expression-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-jcl-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-jdbc-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-orm-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-security-acl-5.0.1.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-security-config-5.0.1.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-security-core-5.0.1.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-security-taglibs-5.0.1.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-security-web-5.0.1.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-test-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-tx-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-web-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/spring-webmvc-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/ssm_dao-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/lib/ssm_service-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/pages/viewresult.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm_web/target/ssm_web-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -265,8 +186,17 @@
       <option name="presentableId" value="Default" />
       <updated>1602559504313</updated>
       <workItem from="1602559508587" duration="9078000" />
-      <workItem from="1602588512336" duration="635000" />
+      <workItem from="1602588512336" duration="1451000" />
+      <workItem from="1602659841930" duration="405000" />
     </task>
+    <task id="LOCAL-00001" summary="maven拆分">
+      <created>1602589490747</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602589490747</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,5 +214,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="maven拆分" />
+    <option name="LAST_COMMIT_MESSAGE" value="maven拆分" />
   </component>
 </project>

@@ -1,5 +1,7 @@
 package cn.itcast.ssm.domain;
 
+import cn.itcast.ssm.utils.DateUtils;
+
 import java.util.Date;
 
 /**
@@ -59,6 +61,9 @@ public class Product {
     }
 
     public String getDepartureTimeStr() {
+        if (departureTime!=null){
+            departureTimeStr = DateUtils.date2String(departureTime,"yyyy-MM-dd HH:mm:ss");
+        }
         return departureTimeStr;
     }
 
@@ -86,11 +91,35 @@ public class Product {
         return productStatus;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id='" + id + '\'' +
+                ", productNum='" + productNum + '\'' +
+                ", productName='" + productName + '\'' +
+                ", cityName='" + cityName + '\'' +
+                ", departureTime=" + departureTime +
+                ", departureTimeStr='" + departureTimeStr + '\'' +
+                ", productPrice=" + productPrice +
+                ", productDesc='" + productDesc + '\'' +
+                ", productStatus=" + productStatus +
+                ", productStatusStr='" + productStatusStr + '\'' +
+                '}';
+    }
+
     public void setProductStatus(Integer productStatus) {
         this.productStatus = productStatus;
     }
 
     public String getProductStatusStr() {
+        if(productStatus!=null){
+            if (productStatus==0){
+                productStatusStr="关闭";
+            }
+            if (productStatus==1){
+                productStatusStr="开启";
+            }
+        }
         return productStatusStr;
     }
 

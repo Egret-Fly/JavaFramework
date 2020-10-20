@@ -1,7 +1,9 @@
 package cn.itcast.ssm.dao;
 
 import cn.itcast.ssm.domain.Product;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -9,5 +11,6 @@ import java.util.List;
 public interface IProductDao {
 
     //查询所有产品信息
+    @Select("select * from product")
     public List<Product> findAll() throws Exception;
 }

@@ -15,13 +15,13 @@
             <groupId>cn.itcast</groupId>
             <artifactId>ssm_domain</artifactId>
             <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
+
         </dependency>
         <dependency>
             <groupId>cn.itcast</groupId>
             <artifactId>ssm_dao</artifactId>
             <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
+
         </dependency>
     </dependencies>
 

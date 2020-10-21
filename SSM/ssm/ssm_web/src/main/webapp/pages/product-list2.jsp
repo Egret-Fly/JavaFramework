@@ -133,7 +133,6 @@
     <!-- 导航侧栏 -->
     <jsp:include page="aside.jsp"></jsp:include>
     <!-- 导航侧栏 /-->
-
     <!-- 内容区域 -->
     <!-- @@master = admin-layout.html-->
     <!-- @@block = content -->
@@ -172,7 +171,7 @@
                         <div class="pull-left">
                             <div class="form-group form-inline">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default" title="新建"><i class="fa fa-file-o"></i> 新建</button>
+                                    <button type="button" class="btn btn-default" title="新建"  onclick="location.href='${pageContext.request.contextPath}/pages/product-add.jsp'"><i class="fa fa-file-o"></i> 新建</button>
                                     <button type="button" class="btn btn-default" title="删除"><i class="fa fa-trash-o"></i> 删除</button>
                                     <button type="button" class="btn btn-default" title="开启"><i class="fa fa-check"></i> 开启</button>
                                     <button type="button" class="btn btn-default" title="屏蔽"><i class="fa fa-ban"></i> 屏蔽</button>
@@ -204,36 +203,28 @@
                                 <th class="text-center">产品描述</th>
                                 <th class="text-center">状态</th>
                                 <th class="text-center">操作</th>
-                                <td class="text-center">
-                                    <button type="button" class="btn bg-olive btn-xs">订单</button>
-                                    <button type="button" class="btn bg-olive btn-xs">详情</button>
-                                    <button type="button" class="btn bg-olive btn-xs">编辑</button>
-                                </td>
                             </tr>
                             </thead>
                             <tbody>
 
-                            <c:forEach items="${productList}" var="product">
-                            <tr>
-                                <td><input name="ids" type="checkbox"></td>
-                                <td>${productList.id}</td>
-                                <td>${product.productNum}
-                                </td>
-                                <td>${product.productName}</td>
-                                <td> ${product.cityName}</td>
-                                <td>${product.departureTimeStr}</td>
-                                <td class="text-center">${product.productPrice}</td>
-                                <td class="text-center">${product.productDesc}</td>
-                                <td class="text-center">${product.productStatusStr}</td>
-                                <td class="text-center">
-                                    <button type="button" class="btn bg-olive btn-xs">订单</button>
-                                    <button type="button" class="btn bg-olive btn-xs">详情</button>
-                                    <button type="button" class="btn bg-olive btn-xs">编辑</button>
-                                </td>
+                           <c:forEach var="product" items="${productList}" >
+                                <tr>
+                                    <td><input name="ids" type="checkbox"></td>
+                                    <td>${product.id}</td>
+                                    <td>${product.productNum}
+                                    </td>
+                                    <td>${product.productName}</td>
+                                    <td> ${product.cityName}</td>
+                                    <td>${product.departureTimeStr}</td>
+                                    <td class="text-center">${product.productPrice}</td>
+                                    <td class="text-center">${product.productDesc}</td>
+                                    <td class="text-center">${product.productStatusStr}</td>
 
-                            </tr>
+                                </tr>
 
                             </c:forEach>
+
+
                             </tbody>
                             <!--
                         <tfoot>
@@ -333,7 +324,7 @@
 
 </div>
 
-</body>
+
 <script src="${pageContext.request.contextPath}/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <script src="${pageContext.request.contextPath}/plugins/jQueryUI/jquery-ui.min.js"></script>
 <script>
@@ -423,6 +414,6 @@
         });
     });
 </script>
-
 </body>
+
 </html>

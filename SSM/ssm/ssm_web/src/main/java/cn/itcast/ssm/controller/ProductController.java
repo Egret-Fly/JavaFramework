@@ -17,7 +17,17 @@ public class ProductController {
     @Autowired
     private IProductService productService;
 
+    //产品添加
+    @RequestMapping("/save.do")
+    public String save(Product product) throws Exception{
+        System.out.println(product);
+        System.out.println("进来了save.do");
+        productService.save(product);
+        System.out.println("hhhh");
+        return "redirect:findAll.do";
+    }
 
+    //查询全部产品
     @RequestMapping("/findAll.do")
     public ModelAndView findAll() throws Exception {
         ModelAndView mv = new ModelAndView();
@@ -26,7 +36,7 @@ public class ProductController {
             System.out.println(p);
         }
         mv.addObject("productList",ps);
-        mv.setViewName("product-list");
+        mv.setViewName("product-list2");
         return mv;
     }
 }

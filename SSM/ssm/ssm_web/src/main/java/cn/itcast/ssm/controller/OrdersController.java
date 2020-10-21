@@ -26,8 +26,8 @@ public class OrdersController {
         for (Orders p : ordersList) {
             System.out.println(p);
         }
-        mv.addObject("productList",ordersList);
-        mv.setViewName("product-list2");
+        mv.addObject("ordersList",ordersList);
+        mv.setViewName("orders-list");
         return mv;
 
     }

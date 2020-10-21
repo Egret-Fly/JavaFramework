@@ -17,6 +17,7 @@ public class Orders {
     private Integer payType;
     private String payTypeStr;
     private String orderDesc;
+    private String orderStatusStr;
 
     public String getId() {
         return id;
@@ -43,6 +44,9 @@ public class Orders {
     }
 
     public String getOrderTimeStr() {
+        if(orderTime!=null){
+            orderTimeStr = DateUtils.date2String(orderTimeStr);
+        }       
         return orderTimeStr;
     }
 
@@ -99,6 +103,17 @@ public class Orders {
     }
 
     public String getPayTypeStr() {
+        if(productStatus!=null){
+            if (productStatus==0){
+                payTypeStr="微信";
+            }
+            if (productStatus==1){
+                payTypeStr="支付宝";
+            }
+            if (productStatus==2){
+                payTypeStr="其他";
+            }
+        }
         return payTypeStr;
     }
 

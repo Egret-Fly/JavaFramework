@@ -1,5 +1,7 @@
 package cn.itcast.ssm.domain;
 
+import cn.itcast.ssm.utils.DateUtils;
+
 import java.util.Date;
 import java.util.List;
 
@@ -17,6 +19,15 @@ public class Orders {
     private Integer payType;
     private String payTypeStr;
     private String orderDesc;
+
+    public String getOrderStatusStr() {
+        return orderStatusStr;
+    }
+
+    public void setOrderStatusStr(String orderStatusStr) {
+        this.orderStatusStr = orderStatusStr;
+    }
+
     private String orderStatusStr;
 
     public String getId() {
@@ -45,7 +56,7 @@ public class Orders {
 
     public String getOrderTimeStr() {
         if(orderTime!=null){
-            orderTimeStr = DateUtils.date2String(orderTimeStr);
+            orderTimeStr = DateUtils.date2String(orderTime,"yyyy-MM-dd HH:mm:ss");
         }       
         return orderTimeStr;
     }

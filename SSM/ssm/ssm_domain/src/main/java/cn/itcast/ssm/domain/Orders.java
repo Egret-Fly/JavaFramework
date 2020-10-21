@@ -20,13 +20,23 @@ public class Orders {
     private String payTypeStr;
     private String orderDesc;
 
-    public String getOrderStatusStr() {
-        return orderStatusStr;
-    }
-
     public void setOrderStatusStr(String orderStatusStr) {
         this.orderStatusStr = orderStatusStr;
     }
+
+    public String getOrderStatusStr() {
+        if(orderStatus!=null){
+            if (orderStatus==0){
+                productStatusStr="关闭";
+            }
+            if (orderStatus==1){
+                productStatusStr="开启";
+            }
+        }
+        return orderStatusStr;
+    }
+
+
 
     private String orderStatusStr;
 

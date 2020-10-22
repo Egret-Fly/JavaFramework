@@ -8,5 +8,11 @@
       <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
       <jdbc-url>jdbc:oracle:thin:@192.168.134.130:1521:orcl</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="@Remote" uuid="9b8d04ea-529e-4d6a-aea8-ee6c0c3353b2">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://49.234.16.178:3306/ssm</jdbc-url>
+    </data-source>
   </component>
 </project>

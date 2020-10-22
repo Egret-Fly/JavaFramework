@@ -25,14 +25,14 @@ public class Orders {
     }
 
     public String getOrderStatusStr() {
-        if(orderStatus!=null){
+
             if (orderStatus==0){
-                productStatusStr="关闭";
+                orderStatusStr="关闭";
             }
             if (orderStatus==1){
-                productStatusStr="开启";
+                orderStatusStr="开启";
             }
-        }
+
         return orderStatusStr;
     }
 

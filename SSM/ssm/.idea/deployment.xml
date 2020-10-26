@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="tencent" stopOnFirstError="true" overwriteAll="false" createEmptyFolders="true">
+    <serverData>
+      <paths name="tencent">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/huangningyuan/ssm_web" local="$PROJECT_DIR$/ssm_web/target/ssm_web" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

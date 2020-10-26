@@ -123,6 +123,25 @@ public class Orders {
         this.payType = payType;
     }
 
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "id='" + id + '\'' +
+                ", orderNum='" + orderNum + '\'' +
+                ", orderTime=" + orderTime +
+                ", orderTimeStr='" + orderTimeStr + '\'' +
+                ", orderStatus=" + orderStatus +
+                ", peopleCount=" + peopleCount +
+                ", product=" + product +
+                ", travellers=" + travellers +
+                ", member=" + member +
+                ", payType=" + payType +
+                ", payTypeStr='" + payTypeStr + '\'' +
+                ", orderDesc='" + orderDesc + '\'' +
+                ", orderStatusStr='" + orderStatusStr + '\'' +
+                '}';
+    }
+
     public String getPayTypeStr() {
         if(payType!=null){
             if (payType==0){

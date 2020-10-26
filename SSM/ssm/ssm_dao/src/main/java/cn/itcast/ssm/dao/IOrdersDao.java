@@ -21,7 +21,7 @@ public interface IOrdersDao {
         @Result(property="orderStatus",column="orderStatus"),
         @Result(property="peopleCount",column="peopleCount"),
         @Result(property="payType",column="payType"),
-        @Result(property="product",column="productId",javaType= Product.class,one = @One(select = "com.itheima.ssm.dao.IProductDao.findById")),
+        @Result(property="product",column="productId",javaType= Product.class,one = @One(select = "cn.itcast.ssm.dao.IProductDao.findById")),
 
 
     })

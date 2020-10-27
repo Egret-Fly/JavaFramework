@@ -316,8 +316,8 @@
                     <div class="pull-left">
                         <div class="form-group form-inline">
                             总共2 页，共14 条数据。 每页
-                            <select class="form-control">
-                                <option>1</option>
+                            <select class="form-control" id="changePageSize" onchange="changePageSize()">
+                                <option >1</option>
                                 <option>2</option>
                                 <option>3</option>
                                 <option>4</option>
@@ -332,11 +332,11 @@
                                 <a href="${pageContext.request.contextPath}/orders/findAll.do?page=1&size=${PageInfo.pageSize}" aria-label="Previous">首页</a>
                             </li>
                             <li><a href="${pageContext.request.contextPath}/orders/findAll.do?page=${PageInfo.pageNum-1}&size=${PageInfo.pageSize}">上一页</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
+
+							<c:forEach begin="1" end="${PageInfo.pages}" var="pageNum">
+								<li><a href="${pageContext.request.contextPath}/orders/findAll.do?page=${pageNum}&size=${PageInfo.pageSize}">${pageNum}</a></li>
+							</c:forEach>
+
                             <li><a href="${pageContext.request.contextPath}/orders/findAll.do?page=${PageInfo.pageNum+1}&size=${PageInfo.pageSize}">下一页</a></li>
                             <li>
                                 <a href="${pageContext.request.contextPath}/orders/findAll.do?page=${PageInfo.pages}&size=${PageInfo.pageSize}" aria-label="Next">尾页</a>
@@ -462,11 +462,13 @@
 	<script>
 		function changePageSize() {
 			//获取下拉框的值
-			var pageSize = $("#changePageSize").val();
 
+
+			var cpage = $("#changePageSize")
+			var size = cpage.val();
 			//向服务器发送请求，改变没页显示条数
-			location.href = "${pageContext.request.contextPath}/orders/findAll.do?page=1&pageSize="
-					+ pageSize;
+			location.href = "${pageContext.request.contextPath}/orders/findAll.do?page=1&size="
+					+ size;
 		}
 		$(document).ready(function() {
 			// 选择框

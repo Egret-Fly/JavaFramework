@@ -31,4 +31,9 @@ public class IOrderServiceImpl implements IOrderService {
 
         return all;
     }
+
+    @Override
+    public Orders findById(String id) {
+        return ordersDao.findById(id);
+    }
 }

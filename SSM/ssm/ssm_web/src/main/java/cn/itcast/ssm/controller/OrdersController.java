@@ -2,6 +2,7 @@ package cn.itcast.ssm.controller;
 
 import cn.itcast.ssm.domain.Orders;
 import cn.itcast.ssm.domain.Product;
+import cn.itcast.ssm.domain.Traveller;
 import cn.itcast.ssm.service.IOrderService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,8 +55,7 @@ public class OrdersController {
     public ModelAndView findById(@RequestParam(name="id",required = true) String ordersId) {
         ModelAndView mv = new ModelAndView();
         Orders orders = orderService.findById(ordersId);
-
-        mv.addObject("",orders);
+        mv.addObject("orders",orders);
         mv.setViewName("orders-show");
 
 

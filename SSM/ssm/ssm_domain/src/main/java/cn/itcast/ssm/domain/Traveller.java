@@ -53,6 +53,18 @@ public class Traveller {
     }
 
     public String getCredentialsTypeStr() {
+        //证件类型 0身份证 1护照 2军官证
+        if (credentialsType!=null){
+            if (credentialsType==0){
+                credentialsTypeStr="身份证";
+            }
+            if (credentialsType==1){
+                credentialsTypeStr="护照";
+            }
+            if (credentialsType==2){
+                credentialsTypeStr="军官证";
+            }
+        }
         return credentialsTypeStr;
     }
 
@@ -77,7 +89,31 @@ public class Traveller {
     }
 
     public String getTravellerTypeStr() {
+
+        if (travellerType!=null) {
+            if (travellerType == 0) {
+                travellerTypeStr = "成人";
+            }
+            if (travellerType == 1) {
+                travellerTypeStr = "儿童";
+            }
+        }
         return travellerTypeStr;
+    }
+
+    @Override
+    public String toString() {
+        return "Traveller{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", phoneNum='" + phoneNum + '\'' +
+                ", credentialsType=" + credentialsType +
+                ", credentialsTypeStr='" + credentialsTypeStr + '\'' +
+                ", credentialsNum='" + credentialsNum + '\'' +
+                ", travellerType=" + travellerType +
+                ", travellerTypeStr='" + travellerTypeStr + '\'' +
+                '}';
     }
 
     public void setTravellerTypeStr(String travellerTypeStr) {

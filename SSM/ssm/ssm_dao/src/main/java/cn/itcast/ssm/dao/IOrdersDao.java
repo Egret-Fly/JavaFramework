@@ -38,7 +38,7 @@ public interface IOrdersDao {
             @Result(property="payType",column="payType"),
             @Result(property="product",column="productId",javaType= Product.class,one = @One(select = "cn.itcast.ssm.dao.IProductDao.findById")),
             @Result(property = "member",column = "memberId",javaType = Member.class,one = @One(select="cn.itcast.ssm.dao.IMemberDao.findById")),
-            @Result(property = "travellers",column = "id ",javaType = java.util.List.class,many = @Many(select="cn.itcast.ssm.dao.ITravellerDao.findById"))
+            @Result(property = "travellers",column = "id",javaType = java.util.List.class,many = @Many(select="cn.itcast.ssm.dao.ITravellerDao.findByOrdersId"))
 
     })
     Orders findById(String id);

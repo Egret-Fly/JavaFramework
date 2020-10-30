@@ -1,5 +1,7 @@
 package cn.itcast.ssm.domain;
 
+import jdk.net.SocketFlow;
+
 import java.util.List;
 
 //与数据库中的Users对应
@@ -62,7 +64,29 @@ public class UserInfo {
         this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return "UserInfo{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", phoneNum='" + phoneNum + '\'' +
+                ", status=" + status +
+                ", statusStr='" + statusStr + '\'' +
+                ", roles=" + roles +
+                '}';
+    }
+
     public String getStatusStr() {
+        //状态0 未开启 1 开启
+        if(status==0){
+            statusStr="未开启";
+        }
+        if(status==1){
+            statusStr="开启";
+        }
+
         return statusStr;
     }
 

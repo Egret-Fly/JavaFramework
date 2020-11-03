@@ -58,4 +58,7 @@
     </bean>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!-- 开启 spring 对注解 AOP 的支持 -->
+    <aop:aspectj-autoproxy/>
 </beans>

@@ -7,12 +7,17 @@
     http://www.springframework.org/schema/security
     http://www.springframework.org/schema/security/spring-security.xsd">
 
+
+    <security:global-method-security jsr250-annotations="enabled"></security:global-method-security>
+
     <!-- 配置不拦截的资源 -->
     <security:http pattern="/login.jsp" security="none"/>
     <security:http pattern="/failer.jsp" security="none"/>
     <security:http pattern="/css/**" security="none"/>
     <security:http pattern="/img/**" security="none"/>
     <security:http pattern="/plugins/**" security="none"/>
+
+
 
     <!--
     	配置具体的规则
@@ -60,7 +65,7 @@
     	</security:authentication-provider>
     </security:authentication-manager>
     -->
-
+    <!-- 开启 spring 对注解 AOP 的支持 -->
 </beans>
 
 

@@ -1,5 +1,6 @@
 package cn.itcast.ssm.dao;
 
+import cn.itcast.ssm.domain.Permission;
 import cn.itcast.ssm.domain.Role;
 import org.apache.ibatis.annotations.*;
 
@@ -23,4 +24,14 @@ public interface IRoleDao {
     @Insert("Insert into role(id,roleName,roleDesc) values(#{id},#{roleName},#{roleDesc})")
     public void save(Role role);
 
+
+    @Select("select * from permission where id not in (select permissionId from role_permission where roleId = #{roleId})")
+    List<Permission> findOtherPermission(String roleId);
+
+    @Select("select * from role where id=#{id}")
+    Role findById(String roleId);
+
+
+    @Insert("insert into role_permission values(#{permissionId},#{roleId})")
+    void addRoleToUser(@Param("roleId") String roleId, @Param("permissionId") String permissionId);
 }

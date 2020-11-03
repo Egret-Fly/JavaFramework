@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 @Service
 @Transactional
@@ -16,6 +17,7 @@ public class ProductServiceImpl implements IProductService {
     private IProductDao productDao;
     
     @Override
+    @RolesAllowed("ADMIN")
     public List<Product> findAll() throws Exception {
         return productDao.findAll();
     }

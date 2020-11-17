@@ -26,6 +26,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/eduService/edu-teacher")
+@CrossOrigin//解决跨域
 public class EduTeacherController {
 
     //注入service
@@ -108,7 +109,7 @@ public class EduTeacherController {
         if (!StringUtils.isEmpty(end)){
             wrapper.le("gmt_create",end);
         }
-
+        wrapper.orderByDesc("gmt_create");
         //调用方法实现条件查询分页
         teacherService.page(pageTeacher,wrapper);
         long total = pageTeacher.getTotal();//总记录数

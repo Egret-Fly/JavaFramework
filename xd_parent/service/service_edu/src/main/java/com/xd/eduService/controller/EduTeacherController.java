@@ -39,15 +39,7 @@ public class EduTeacherController {
     public R findAllTeacher(){
         //调用service的方法实现查询的所有操作
         List<EduTeacher> list = teacherService.list(null);
-        try{
-            int i=10/0;
-        }catch (Exception e){
-            //执行自定义异常
-            throw  new xdException(20001,"执行了自定义异常");
-        }
-
         return R.ok().data("items",list);
-
     }
 
     //2 逻辑删除讲师的方法

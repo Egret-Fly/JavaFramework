@@ -2,14 +2,14 @@ package com.xd.eduService.controller;
 
 
 import com.xd.commonutils.R;
+import com.xd.eduService.domain.subject.OneSubject;
 import com.xd.eduService.service.EduSubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * <p>
@@ -35,6 +35,13 @@ public class EduSubjectController {
         //上传过来的Excel文件
         subjectService.saveSubject(file,subjectService);
         return R.ok();
+    }
+
+    //课程分类列表（树形）
+    @GetMapping("getAllSubject")
+    public R getAllSubject(){
+        List<OneSubject> list = subjectService.getAllOneTwoSubject();
+        return R.ok().data("list",list);
     }
 
 

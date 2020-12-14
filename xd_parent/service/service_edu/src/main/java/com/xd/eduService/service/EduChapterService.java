@@ -18,4 +18,8 @@ public interface EduChapterService extends IService<EduChapter> {
 
 
     List<chapterVo> getChapterById(String courserId);
+
+    void removeChapterByCourseId(String courseId);
+
+    boolean deleteChapter(String chapterId);
 }

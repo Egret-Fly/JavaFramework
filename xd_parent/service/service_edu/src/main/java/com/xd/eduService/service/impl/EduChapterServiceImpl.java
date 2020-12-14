@@ -9,6 +9,7 @@ import com.xd.eduService.mapper.EduChapterMapper;
 import com.xd.eduService.service.EduChapterService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xd.eduService.service.EduVideoService;
+import com.xd.servicebase.exceptionhandler.xdException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,5 +66,30 @@ public class EduChapterServiceImpl extends ServiceImpl<EduChapterMapper, EduChap
         return chapterVos;
 
 
+    }
+
+    @Override
+    public void removeChapterByCourseId(String courseId) {
+        QueryWrapper<EduChapter> objectQueryWrapper = new QueryWrapper<>();
+        objectQueryWrapper.eq("course_id",courseId);
+        baseMapper.delete(objectQueryWrapper);
+    }
+
+    ////删除章节的方法
+    @Override
+    public boolean deleteChapter(String chapterId) {
+        //根据chapterid章节id 查询小节表，如果查询数据，不进行删除
+        QueryWrapper<EduVideo> wrapper = new QueryWrapper<>();
+        wrapper.eq("chapter_id",chapterId);
+        int count = eduVideoService.count(wrapper);
+        //判断
+        if(count >0) {//查询出小节，不进行删除
+            throw new xdException(20001,"不能删除");
+        } else { //不能查询数据，进行删除
+            //删除章节
+            int result = baseMapper.deleteById(chapterId);
+            //成功  1>0   0>0
+            return result>0;
+        }
     }
 }

@@ -1,9 +1,14 @@
 package com.xd.eduService.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xd.eduService.domain.EduCourse;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xd.eduService.domain.frontvo.CourseFrontVo;
+import com.xd.eduService.domain.frontvo.CourseWebVo;
 import com.xd.eduService.domain.vo.CourseInfoVo;
 import com.xd.eduService.domain.vo.CoursePublishVo;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -28,4 +33,8 @@ public interface EduCourseService extends IService<EduCourse> {
 
     //删除课程
     void removeCourse(String courseId);
+
+    Map<String, Object> getCourseFrontList(Page<EduCourse> pageCouse, CourseFrontVo courseFrontVo);
+
+    CourseWebVo getBaseCourseInfo(String courseId);
 }

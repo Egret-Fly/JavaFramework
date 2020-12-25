@@ -4,20 +4,27 @@ import java.util.*;
 
 public class test {
 
-    public static  boolean rotate(int[] nums) {
-        int n = nums.length;
-        int far = 0 ;
-        for(int i=0;i<n;i++){
-            if(i<=far){
-                int tempfar = i + nums[i];
-                far=Math.max(far , tempfar);
-            }else{
-                return false;
+    public static int firstUniqChar(String s) {
+        int n = s.length();
+        boolean[] v = new boolean[n];
+        char[] c = s.toCharArray();
+        if(n==1) return 0;
+        for(int i=0;i<n-1;i++){
+            for(int j=i+1;j<n;j++){
+                if(c[i]==c[j]&&!v[i]){
+                    v[j]=true;
+                }
             }
-
+            if(!v[i]){
+                return i;
+            }
         }
-            return true;
+        return -1;
     }
+
+
+
+
 
 
 
@@ -25,6 +32,7 @@ public class test {
     public static void main(String[] args) {
 
 
-        System.out.println(rotate(new int[]{3,2,1,0,4}));
+        System.out.println(firstUniqChar("aadadaad"));
+
     }
 }

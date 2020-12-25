@@ -5,6 +5,10 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xd.commonutils.R;
 import com.xd.eduService.domain.EduCourse;
 import com.xd.eduService.domain.EduTeacher;
+import com.xd.eduService.domain.chapter.chapterVo;
+import com.xd.eduService.domain.frontvo.CourseFrontVo;
+import com.xd.eduService.domain.frontvo.CourseWebVo;
+import com.xd.eduService.service.EduChapterService;
 import com.xd.eduService.service.EduCourseService;
 import com.xd.eduService.service.EduTeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,34 +18,37 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/eduservice/teacherfront")
+@RequestMapping("/eduservice/Coursefront")
 @CrossOrigin
-public class TeacherFrontController {
-
-    @Autowired
-    private EduTeacherService eduTeacherService;
+public class CourseFrontController {
 
     @Autowired
     private EduCourseService eduCourseService;
 
+    @Autowired
+    private EduChapterService eduChapterService;
 
-    @GetMapping("getTeacherFront/{page}/{limit}")
-    public R getTeacherFront(@PathVariable long page,@PathVariable long limit){
-        Page<EduTeacher> pageTeacher = new Page<>(page,limit);
-        Map<String,Object> map = eduTeacherService.getTeaccherFrontList(pageTeacher);
+    //条件查询带分页
+    @PostMapping("getCourseFront/{page}/{limit}")
+    public R geCourseFront(@PathVariable long page, @PathVariable long limit,
+                           @RequestBody(required = false) CourseFrontVo courseFrontVo){
+        Page<EduCourse> pageCourse = new Page<>(page,limit);
+        Map<String,Object> map = eduCourseService.getCourseFrontList(pageCourse,courseFrontVo);
         return R.ok().data(map);
     }
 
-    //2.讲师详情
-    @GetMapping("getTeacherFrontInfo/{teacherId}")
-    public R getTeacherInfo(@PathVariable String teacherId){
-        //根据讲师id查询讲师基本信息
-        EduTeacher eduteacher = eduTeacherService.getById(teacherId);
+    //2 课程详情的方法
+    @GetMapping("getFrontCourseInfo/{courseId}")
+    public R getFrontCourseInfo(@PathVariable String courseId){
+        //根据课程id，编写sql语句查询课程信息
+        CourseWebVo courseWebVo = eduCourseService.getBaseCourseInfo(courseId);
 
-        //2根据讲师id查询所讲课程
-        QueryWrapper<EduCourse> wrapper = new QueryWrapper<>();
-        wrapper.eq("teacher_id",teacherId);
-        List<EduCourse> eduCourseList = eduCourseService.list(wrapper);
-        return R.ok().data("teacher",eduteacher).data("courseList",eduCourseList);
+        //根据课程id查询章节小节
+        List<chapterVo> chapterById = eduChapterService.getChapterById(courseId);
+
+        return R.ok().data("courseWebVo",courseWebVo).data("chapterVideoList",chapterById);
+
     }
+
+
 }

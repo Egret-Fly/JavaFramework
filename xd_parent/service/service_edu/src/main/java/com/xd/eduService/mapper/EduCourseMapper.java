@@ -2,6 +2,7 @@ package com.xd.eduService.mapper;
 
 import com.xd.eduService.domain.EduCourse;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.xd.eduService.domain.frontvo.CourseWebVo;
 import com.xd.eduService.domain.vo.CoursePublishVo;
 
 /**
@@ -14,4 +15,6 @@ import com.xd.eduService.domain.vo.CoursePublishVo;
  */
 public interface EduCourseMapper extends BaseMapper<EduCourse> {
     public CoursePublishVo getPublishCourseInfo(String courseId);
+
+    CourseWebVo getBaseCourseInfo(String courseId);
 }

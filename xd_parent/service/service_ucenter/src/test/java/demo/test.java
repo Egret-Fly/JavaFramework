@@ -5,21 +5,16 @@ import java.util.*;
 public class test {
 
     public static int firstUniqChar(String s) {
-        int n = s.length();
-        boolean[] v = new boolean[n];
-        char[] c = s.toCharArray();
-        if(n==1) return 0;
-        for(int i=0;i<n-1;i++){
-            for(int j=i+1;j<n;j++){
-                if(c[i]==c[j]&&!v[i]){
-                    v[j]=true;
-                }
+        int n=10;
+        int[] dp = new int[n+1];
+        dp[0]=0;
+        dp[1]=1;
+        for(int i=2;i<=n;++i)
+            for(int j=0;j<i;++j){
+                dp[i] += dp[j]*dp[i-j-1];
             }
-            if(!v[i]){
-                return i;
-            }
-        }
-        return -1;
+
+        return dp[n];
     }
 
 
